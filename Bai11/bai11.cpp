@@ -1,38 +1,38 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+struct Point
+{
+	float x;
+	float y;
+};
+void Nhap(Point&);
+float KhoangCach(Point, Point);
+float XuLy(float, float, float, float);
+
 int main()
 {
-	cout << "Nhap toa do cac dinh cua tam giac" << endl;
-	float x1;
-	cout << "Nhap x1: ";
-	cin >> x1;
-
-	float y1;
-	cout << "Nhap y1: ";
-	cin >> y1;
-
-	float x2;
-	cout << "Nhap x2: ";
-	cin >> x2;
-
-	float y2;
-	cout << "Nhap y2: ";
-	cin >> y2;
-
-	float x3;
-	cout << "Nhap x3: ";
-	cin >> x3;
-
-	float y3;
-	cout << "Nhap y3: ";
-	cin >> y3;
-
-	float AB = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-	float BC = sqrt((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2));
-	float AC = sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
-	float p = (AB + BC + AC) / 2;
-	float Area = sqrt(p * (p - AB) * (p - BC) * (p - AC));
+	Point A, B, C;
+	Nhap(A);
+	Nhap(B);
+	Nhap(C);
+	float p = (KhoangCach(A, B), KhoangCach(C, B), KhoangCach(A, C)) / 2;
+	float Area = XuLy(p, KhoangCach(A, B), KhoangCach(C, B), KhoangCach(A, C));
 	cout << "Dien tich cua tam giac la: " << Area;
 	return 0;
+}
+void Nhap(Point&p)
+{
+	cout << "Nhap x: ";
+	cin >> p.x;
+	cout << "Nhap y: ";
+	cin >> p.y;
+}
+float KhoangCach(Point p, Point q)
+{
+	return sqrt((p.x - q.x) * (p.x - q.x) + (p.y - q.y) * (p.y - q.y));
+};
+float XuLy(float p, float a, float b, float c)
+{
+	return sqrt(p * (p - a) * (p - b) * (p - c));
 }

@@ -1,11 +1,22 @@
 #include <iostream>
 using namespace std;
+
+void Nhap(int&);
+int XuLy(int);
+
 int main()
 {
     int n;
+    Nhap(n);
+    cout << "Chu so hang chuc cua n la: " << XuLy(n);
+    return 0;
+}
+void Nhap(int &n)
+{
     cout << "Nhap n: ";
     cin >> n;
-    int hc = (n / 10) % 10;
-    cout << "Chu so hang chuc cua n la: " << hc;
-    return 0;
+}
+int XuLy(int n)
+{
+    return (n / 10) % 10;
 }

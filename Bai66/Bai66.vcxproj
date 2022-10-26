@@ -24,6 +24,7 @@
     <ProjectGuid>{18e1cf22-15cd-4127-83d4-ccfcb4313713}</ProjectGuid>
     <RootNamespace>Bai66</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Bai 0066</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
