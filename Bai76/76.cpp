@@ -1,15 +1,24 @@
 #include <iostream>
 using namespace std;
+void Nhap(float&, int&);
+float Tong(float, int);
 int main()
 {
 	float x;
+	int n;
+	Nhap(x, n);
+	cout << "Gia tri cua S la: " << Tong(x, n);
+	return 0;
+}
+void Nhap(float& x, int& n)
+{
 	cout << "Nhap x: ";
 	cin >> x;
-
-	int n;
 	cout << "Nhap n: ";
 	cin >> n;
-
+}
+float Tong(float x, int n)
+{
 	float s = 1;
 	float t = x;
 	int m = 1;
@@ -21,6 +30,5 @@ int main()
 		i = i + 2;
 		m = m * (i - 1) * i;
 	}
-	cout << "Gia tri cua S la: " << s;
-	return 0;
+	return s;
 }
