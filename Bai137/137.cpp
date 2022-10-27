@@ -1,10 +1,22 @@
 #include <iostream>
 using namespace std;
+void Nhap(int&);
+void XuLy(int);
 int main()
 {
-	float x;
+	int x;
+	Nhap(x);
+	XuLy(x);
+	return 0;
+}
+void Nhap(int& x)
+{
 	cout << "Nhap x: ";
 	cin >> x;
+}
+void XuLy(int x)
+{
+	int f;
 	if (x >= 0)
 	{
 		if (x <= 1)
@@ -14,5 +26,4 @@ int main()
 	}
 	else
 		cout << "f(x) = " << -2 * x * x * x + 6 * x + 9;
-	return 0;
 }

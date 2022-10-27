@@ -1,24 +1,43 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+struct Point
+{
+	float x;
+	float y;
+};
+void Nhap(Point&);
+float DienTich(Point, Point, Point);
+void KiemTra(float, float, float, float);
 int main()
 {
-	float xA, yA, xB, yB, xC, yC, xM, yM;
-	cout << "Nhap toa do diem A: ";
-	cin >> xA >> yA;
-	cout << "Nhap toa do diem B: ";
-	cin >> xB >> yB;
-	cout << "Nhap toa do diem C: ";
-	cin >> xC >> yC;
-	cout << "Nhap toa do diem M: ";
-	cin >> xM >> yM;
-	float sMAB = abs(xM * yA + xA * yB + xB * yM - xA * yM - xB * yA - xB * yM)/2;
-	float sMBC = abs(xM * yB + xB * yC + xC * yM - xB * yM - xC * yB - xM * yC)/2;
-	float sMAC = abs(xM * yA + xA * yC + xC * yM - xA * yM - xC * yA - xM * yC)/2;
-	float sABC = abs(xA * yB + xB * yC + xC * yA - xB * yA - xC * yB - xA * yC)/2;
-	if (sMAB + sMBC + sMAC == sABC)
+	Point A, B, C, M;
+	cout << "Nhap toa do diem A " << endl;
+	Nhap(A);
+	cout << "Nhap toa do diem B: " << endl;
+	Nhap(B);
+	cout << "Nhap toa do diem C: " << endl;
+	Nhap(C);
+	cout << "Nhap toa do diem M: " << endl;
+	Nhap(M);
+	KiemTra(DienTich(A, B, C), DienTich(M, A, B), DienTich(M, B, C), DienTich(M, A, C));
+	return 0;
+}
+void Nhap(Point& p)
+{
+	cout << "Nhap x: ";
+	cin >> p.x;
+	cout << "Nhap y: ";
+	cin >> p.y;
+}
+float DienTich(Point p, Point q, Point k)
+{
+	return abs(p.x * q.y + q.x * k.y + k.x * p.y - q.x * p.y - k.x * q.y - k.x * p.y) / 2;
+};
+void KiemTra(float a, float b, float c, float d)
+{
+	if (a == b + c + d)
 		cout << "Diem M thuoc tam giac";
 	else
 		cout << "Diem M khong thuoc tam giac";
-	return 0;
 }

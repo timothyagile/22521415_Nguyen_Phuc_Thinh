@@ -1,11 +1,21 @@
 #include <iostream>
 using namespace std;
-
+void Nhap(int&);
+int XuLy(int);
 int main()
 {
 	int n;
+	Nhap(n);
+	cout << "Gia tri cua a la: " << XuLy(n);
+	return 0;
+}
+void Nhap(int& n)
+{
 	cout << "Nhap n: ";
 	cin >> n;
+}
+int XuLy(int n)
+{
 	int at = 3;
 	int att = -1;
 	int i = 2;
@@ -17,6 +27,5 @@ int main()
 		att = at;
 		at = ahh;
 	}
-	cout << "Gia tri cua a" << i - 1 << " la: " << ahh;
-	return 0;
+	return ahh;
 }
