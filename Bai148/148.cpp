@@ -1,10 +1,21 @@
 #include <iostream>
 using namespace std;
+void Nhap(int&);
+void KiemTra(int);
 int main()
 {
 	int n;
+	Nhap(n);
+	KiemTra(n);
+	return 0;
+}
+void Nhap(int& n)
+{
 	cout << "Nhap n: ";
 	cin >> n;
+}
+void KiemTra(int n)
+{
 	int t = n;
 	int dv;
 	int flag = 0;
@@ -19,5 +30,4 @@ int main()
 		cout << "So " << n << " la so toan chan";
 	else
 		cout << "So " << n << " la so khong toan chan";
-	return 0;
 }

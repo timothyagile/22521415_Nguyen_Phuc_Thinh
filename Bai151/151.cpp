@@ -1,10 +1,21 @@
 #include <iostream>
 using namespace std;
+void Nhap(int&);
+void KiemTra(int);
 int main()
 {
 	int n;
+	Nhap(n);
+	KiemTra(n);
+	return 0;
+}
+void Nhap(int& n)
+{
 	cout << "Nhap n: ";
 	cin >> n;
+}
+void KiemTra(int n)
+{
 	int t = n;
 	int flag = 1;
 	while (t > 1)
@@ -16,5 +27,4 @@ int main()
 	}
 	if (flag == 1)
 		cout << "So " << n << " co dang 2^m";
-	return 0;
 }
