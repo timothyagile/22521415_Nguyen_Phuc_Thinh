@@ -1,7 +1,13 @@
-#include <iostream>
+ #include <iostream>
 #include <cmath>
 using namespace std;
+float XuLy();
 int main()
+{
+	cout << "Gia tri cua S voi do chinh xac 10^-6 la: " << XuLy();
+	return 0;
+}
+float XuLy()
 {
 	float s = 0;
 	float e = 1;
@@ -12,6 +18,5 @@ int main()
 		s = s + e;
 		i = i + 1;
 	}
-	cout << "Gia tri cua S voi do chinh xac 10^-6 la: " << s;
-	return 0;
+	return s;
 }
